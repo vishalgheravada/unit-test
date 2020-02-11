@@ -11,25 +11,21 @@ export default class GuessedWords extends Component {
         ).isRequired
     };
     render() {
-
         if(this.props.guessedWords.length > 0) {
             return (
                 <div dataTest="guessedComponent">
-                    <div dataTest="wordListing">
-                        <table>
-                            <tbody>
-                                {
-                                    this.props.guessedWords.map(i => (
-                                        <tr key={i.guessedWord}>
-                                            <td>{i.guessedWord}</td>
-                                            <td>{i.letterCount}</td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-
+                    <table>
+                        <tbody>
+                            {
+                                this.props.guessedWords.map(i => (
+                                    <tr key={i.guessedWord} dataTest="wordListing">
+                                        <td>{i.guessedWord}</td>
+                                        <td>{i.letterCount}</td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
                 </div>                
             );
         }

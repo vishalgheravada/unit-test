@@ -46,7 +46,7 @@ describe("If there are words", () => {
     });
 
     test("Renders guessed words", () => {
-        const instrction = findByTestAttr(wrapper, "wordListing");
-        expect(instrction.length).toBe(1);
+        const wordListing = findByTestAttr(wrapper, "wordListing");
+        expect(wordListing.length).toBe(defaultProps.guessedWords.length);
     });
 });
