@@ -1,8 +1,11 @@
 import React from "react";
 import {shallow} from "enzyme";
 import CongratsComponent from "../jotto/congrats";
-import {findByTestAttr} from "./utils";
+import {findByTestAttr, checkProps} from "./utils";
+import congrats from "../jotto/congrats";
 
+
+const defaultProps = {success: false};
 /**
  * Factory function to create a shallowrapper for the compoenent
  * @function init
@@ -11,7 +14,8 @@ import {findByTestAttr} from "./utils";
  * @returns ShallowWrapper
  */
 const init = (props = {}, state = {}) => {
-    return shallow(<CongratsComponent {...props} />);
+    const setUpProps = {...defaultProps, ...props};
+    return shallow(<CongratsComponent {...setUpProps} />);
 };
 
 describe("Jotto App", () => {    
@@ -22,7 +26,7 @@ describe("Jotto App", () => {
     });
 
     test("Renders no text when the props is false", () => {
-        const wrapper = init({success: false});
+        const wrapper = init();
         const congratsComponent = findByTestAttr(wrapper, "congratsComponent");
         expect(congratsComponent.text()).toBe('');
     });
@@ -31,5 +35,10 @@ describe("Jotto App", () => {
         const wrapper = init({success: true});
         const congratsComponent = findByTestAttr(wrapper, "congratsMessage");
         expect(congratsComponent.text().length).toBeGreaterThan(0);
+    });
+
+    test("Does not throws a warning with expected props", () => {
+        const expectedProps = {success: true};
+        checkProps(congrats, expectedProps);
     });
 });
