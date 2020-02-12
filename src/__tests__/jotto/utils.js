@@ -4,7 +4,7 @@ import checkPropTypes from "check-prop-types";
  * @function findByTestAttr
  * @param {*} wrapper 
  * @param {*} value 
- * @returns {ShallowWrapper}
+ * @return {*} ShallowWrapper
  */
 export const findByTestAttr = (wrapper, value) => {
     return wrapper.find(`[dataTest='${value}']`);
