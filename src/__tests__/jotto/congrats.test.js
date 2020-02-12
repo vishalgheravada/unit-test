@@ -1,8 +1,8 @@
 import React from "react";
 import {shallow} from "enzyme";
-import CongratsComponent from "../jotto/congrats";
+import CongratsComponent from "../../jotto/congrats";
 import {findByTestAttr, checkProps} from "./utils";
-import congrats from "../jotto/congrats";
+import congrats from "../../jotto/congrats";
 
 
 const defaultProps = {success: false};

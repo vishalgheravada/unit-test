@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '../counter/App.js';
+import App from '../../counter/App.js';
 import {shallow} from "enzyme";
 
 let wrapper;
