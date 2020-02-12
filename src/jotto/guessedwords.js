@@ -14,7 +14,13 @@ export default class GuessedWords extends Component {
         if(this.props.guessedWords.length > 0) {
             return (
                 <div dataTest="guessedComponent">
-                    <table>
+                    <table className="table table-sm">
+                        <thead className="thead-light">
+                            <tr>
+                                <th>Word</th>
+                                <th>Match</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             {
                                 this.props.guessedWords.map(i => (
