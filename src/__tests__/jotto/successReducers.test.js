@@ -8,5 +8,5 @@ test("returs default initial state of 'false' when no action is passed", () => {
 
 test("returs default initial state of 'true' upon reciveing an action type of CORRECT_GUESS", () => {
     const newState = successReducers(undefined, {type: actionType.CORRECT_GUESS});
-    expect(newState).toBe(false);
+    expect(newState).toBe(true);
 });
