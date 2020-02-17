@@ -1,6 +1,13 @@
 import React from "react";
 import Input from "../../jotto/input";
-import {findByTestAttr} from "./utils";
+import {findByTestAttr, storeFactory} from "./utils";
+import { shallow } from "enzyme";
+
+
+const init = (initialState = {}) => {
+    const store = storeFactory(initialState);
+    return shallow(<Input store={store}/>).dive().dive();
+};
 
 
 describe("render", () => {
@@ -12,7 +19,7 @@ describe("render", () => {
     describe("word has not been guessed", () => {
         test("renders component without error", () => {});
         test("renders input box", () => {});    
-        test("renders submit button", () => {});
+        test("renders submit button", () => {}); 
     });
 });
 
